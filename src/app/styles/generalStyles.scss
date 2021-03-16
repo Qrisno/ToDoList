@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+*:focus {
+    outline: 0;
+}
+
+@mixin basic-text($size,
+$fontWeight) {
+    font-family: 'Caveat', cursive;
+    font-size: $size;
+    font-weight: $fontWeight;
+}
+
+@mixin noSelect {
+    -webkit-appearance: none;
+    --webkit-user-select: none;
+    --moz-user-select: none;
+    --ms-user-select: none;
+    user-select: none;
+}

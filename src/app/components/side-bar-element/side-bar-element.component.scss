@@ -1,0 +1,32 @@
+@import '../../styles/index.scss';
+.sideBarElement {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+    .las {
+        font-size: 30px;
+        color: $textColor;
+    }
+    .iconText {
+        color: $textColor;
+        @include basic-text(16px, bold);
+    }
+}
+
+.sideBarElement:hover {
+    transition: background-color 1s;
+    border-radius: 2px;
+    background-color: $basicBlue;
+    .las {
+        transition: color 1s;
+        color: white;
+    }
+    .iconText {
+        transition: color 1s;
+        color: white;
+    }
+}

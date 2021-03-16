@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../styles/generalStyles.scss","side-bar.component.scss","../../styles/colors.scss"],"names":[],"mappings":"AAAQ;AACR;EACI;;;ACDJ;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;;AACA;EAPF;IAQI;;;AAEF;EDPE;EACA,WCOoB;EDNpB,aCM0B;EAC1B;EACA,OCbO;EDcP;;AAEF;EACE","file":"side-bar.component.css"}

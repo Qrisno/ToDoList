@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+*:focus {
+  outline: 0;
+}
+
+.loginPage {
+  display: flex;
+}
+.loginPage .router {
+  width: 50%;
+  position: relative;
+  min-height: 55%;
+}
+.loginPage .loginLeft {
+  position: relative;
+}
+.loginPage img {
+  border-radius: 0 10px 0 0;
+  border-left: 0;
+  width: 60vw;
+  height: calc(100vh - 4px);
+  box-shadow: 0px 0px 20px #4090FF;
+}
+.loginPage .welcomeText {
+  word-wrap: break-word;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 75%;
+  left: 50%;
+  font-family: "Caveat", cursive;
+  font-size: 40px;
+  font-weight: bold;
+  color: #d35f5d;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 100vh;
+}
+.container .register {
+  padding: 5px;
+  box-shadow: none;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  --webkit-user-select: none;
+  --moz-user-select: none;
+  --ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  margin-right: 20px;
+  margin-top: 47px;
+  align-self: flex-end;
+  align-items: center;
+  cursor: pointer;
+  color: #d35f5d;
+}
+.container .register span {
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+  font-weight: bold;
+}
+.container .register:hover {
+  background-color: rgba(64, 144, 255, 0.1);
+  transition: 0.5s;
+}
+.container .login {
+  padding: 5px;
+  box-shadow: none;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  --webkit-user-select: none;
+  --moz-user-select: none;
+  --ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  margin-top: 47px;
+  margin-left: 20px;
+  align-self: flex-start;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  color: #d35f5d;
+}
+.container .login span {
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+  font-weight: bold;
+}
+.container .login:hover {
+  background-color: rgba(64, 144, 255, 0.1);
+  transition: 1s;
+}
+.container h1 {
+  -webkit-appearance: none;
+  --webkit-user-select: none;
+  --moz-user-select: none;
+  --ms-user-select: none;
+  user-select: none;
+  font-family: "Caveat", cursive;
+  font-size: 70px;
+  font-weight: normal;
+  color: #4090FF;
+}
+
+:host ::ng-deep .button-override {
+  background-color: #d35f5d;
+  background-image: none;
+  border: none;
+  color: white;
+}
+
+/*# sourceMappingURL=auth-page.component.css.map */

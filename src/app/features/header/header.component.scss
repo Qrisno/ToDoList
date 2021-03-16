@@ -1,0 +1,43 @@
+@import '../../styles/index.scss';
+.header{
+  height: 58px;
+  display: flex;
+  align-items: center;
+  input[type='search']{
+    width: 800px;
+    height: 58px;
+    border: transparent;
+    color: $textColor;
+    @include basic-text(30px, 400);
+    @media (max-width: 768px) {
+      width: 350px;
+    }
+  }
+  .user{
+    display: flex;
+    @media (max-width: 768px) {
+      padding-left: 7%;
+    }
+      padding-left: 10%;
+  }
+  .search{
+    display: flex;
+    align-items: center;
+  }
+  .la-search{
+    padding-left: 20px;
+    padding-right: 15px;
+    font-size: 30px;
+    color: $textColor;
+  }
+  .la-envelope{
+    @extend .la-search;
+    cursor: pointer;
+  }
+  .circle{
+    background-color: blue;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+  }
+}

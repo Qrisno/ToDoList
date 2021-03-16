@@ -1,0 +1,35 @@
+@import '../../styles/index.scss';
+.logOrRegist {
+    display: flex;
+    column-gap: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 20px;
+    padding-bottom: 80px;
+    .invalid {
+        @include basic-text(20px, bold);
+        color: $circleRed;
+    }
+    .regist {
+        @include noSelect;
+        @extend .invalid;
+        padding-top: 8px;
+        text-decoration: none;
+        &:hover {
+            color: $basicBlue;
+        }
+    }
+}
+
+:host {
+     ::ng-deep .button-override {
+        background-color: $circleRed;
+        background-image: none;
+        border: none;
+        color: white;
+    }
+}

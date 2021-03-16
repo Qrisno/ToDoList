@@ -1,0 +1,24 @@
+@import '../../styles/index.scss';
+:host{
+  display: inline-block;
+}
+.sideBar {
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0 4px 0;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-bottom: 0;
+  @media (max-width: 768px) {
+    width: 100px;
+  }
+  h2 {
+    @include basic-text(20px, bold);
+    text-align: center;
+    color: $textColor;
+    cursor: pointer;
+  }
+  h2:hover {
+    color: black;
+  }
+}

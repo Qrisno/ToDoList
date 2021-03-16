@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+*:focus {
+  outline: 0;
+}
+
+.header {
+  height: 58px;
+  display: flex;
+  align-items: center;
+}
+.header input[type=search] {
+  width: 800px;
+  height: 58px;
+  border: transparent;
+  color: #8c8c8c;
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .header input[type=search] {
+    width: 350px;
+  }
+}
+.header .user {
+  display: flex;
+  padding-left: 10%;
+}
+@media (max-width: 768px) {
+  .header .user {
+    padding-left: 7%;
+  }
+}
+.header .search {
+  display: flex;
+  align-items: center;
+}
+.header .la-search, .header .la-envelope {
+  padding-left: 20px;
+  padding-right: 15px;
+  font-size: 30px;
+  color: #8c8c8c;
+}
+.header .la-envelope {
+  cursor: pointer;
+}
+.header .circle {
+  background-color: blue;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+}
+
+/*# sourceMappingURL=header.component.css.map */

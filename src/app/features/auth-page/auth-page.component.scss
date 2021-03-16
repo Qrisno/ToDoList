@@ -1,0 +1,92 @@
+@import '../../styles/index';
+.loginPage {
+    display: flex;
+    .router {
+        width: 50%;
+        position: relative;
+        min-height: 55%;
+    }
+    .loginLeft {
+        position: relative;
+    }
+    img {
+        border-radius: 0 10px 0 0;
+        border-left: 0;
+        width: 60vw;
+        height: calc(100vh - 4px);
+        box-shadow: 0px 0px 20px $basicBlue;
+    }
+    .welcomeText {
+        word-wrap: break-word;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 75%;
+        left: 50%;
+        @include basic-text(40px, bold);
+        color: $circleRed;
+    }
+}
+
+.container {
+    .register {
+        span {
+            @include basic-text(25px, bold);
+        }
+        &:hover {
+            background-color: rgba($basicBlue, 0.1);
+            transition: 0.5s;
+        }
+        padding: 5px;
+        box-shadow: none;
+        border-radius: 5px;
+        @include noSelect;
+        display: inline-flex;
+        margin-right: 20px;
+        margin-top: 47px;
+        align-self: flex-end;
+        align-items: center;
+        cursor: pointer;
+        color: $circleRed;
+    }
+    .login {
+        span {
+            @include basic-text(25px, bold);
+        }
+        &:hover {
+            background-color: rgba($basicBlue, 0.1);
+            transition: 1s;
+        }
+        padding: 5px;
+        box-shadow: none;
+        border-radius: 5px;
+        @include noSelect;
+        display: inline-flex;
+        margin-top: 47px;
+        margin-left: 20px;
+        align-self: flex-start;
+        text-align: center;
+        align-items: center;
+        cursor: pointer;
+        color: $circleRed;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 100vh;
+    h1 {
+        @include noSelect;
+        @include basic-text(70px, normal);
+        color: $basicBlue;
+    }
+}
+
+:host {
+     ::ng-deep .button-override {
+        background-color: $circleRed;
+        background-image: none;
+        border: none;
+        color: white;
+    }
+}

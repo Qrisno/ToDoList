@@ -1,0 +1,10 @@
+<form #loginform='ngForm' (ngSubmit)="authenticationService.login(loginform.value)">
+    <input placeholder='Username' type="text" (ngModel)='username' name="username" pInputText />
+    <input [feedback]="false" placeholder='Password' (ngModel)='password' name="password" type="password" pPassword />
+    <em *ngIf='!authenticationService.validStatus' class="invalid">Username or password does not exist!</em>
+    <div class="logOrRegist">
+        <p-button type='submit' styleClass="button-override" label="Login"></p-button>
+
+    </div>
+
+</form>

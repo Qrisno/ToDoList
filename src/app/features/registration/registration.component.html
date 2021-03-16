@@ -1,0 +1,12 @@
+<form [formGroup]='registrationForm' (ngSubmit)='onSubmit(registrationForm.value.name, registrationForm.value.surname, registrationForm.value.username, registrationForm.value.passGroup)'>
+
+    <input formControlName='name' placeholder='Name' type="text" name="name" pInputText />
+    <input formControlName='surname' placeholder='Surname' type="text" name="surname" pInputText />
+    <input formControlName='username' placeholder='Username' type="text" name="username" pInputText />
+    <div formGroupName='passGroup'>
+        <input formControlName='password' [feedback]="true" placeholder='Password' name="password" type="password" pPassword />
+        <input formControlName='confirmPass' [feedback]="false" placeholder='Confirm Password' name="password" type="password" pPassword />
+    </div>
+
+    <p-button type='submit' styleClass="button-override" label="Register"></p-button>
+</form>
