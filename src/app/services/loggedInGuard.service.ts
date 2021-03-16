@@ -11,6 +11,6 @@ export class LogGuardService implements CanActivate{
   }
 
   canActivate(): boolean {
-    return this.authenticationService.loggedState;
+    return !!this.authenticationService.getUserId();
   }
 }

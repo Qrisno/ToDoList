@@ -6,7 +6,7 @@ import * as firebase from 'firebase';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService implements CanActivate{
+export class AuthenticationService {
   public loggedState = false;
   database: any;
   validStatus = true;
@@ -14,10 +14,11 @@ export class AuthenticationService implements CanActivate{
   login(i: any): void{
     this.getUserList().on('value', (snapshot: any) => {
       this.data = snapshot.val();
-      for (const user in Object.keys(this.data)){
-        if (this.data.hasOwnProperty(user)){
-          if (this.data[user].username === i.username && this.data[user].password === i.password){
+      for (const userId in Object.keys(this.data)){
+        if (this.data.hasOwnProperty(userId)){
+          if (this.data[userId].username === i.username && this.data[userId].password === i.password){
             this.router.navigate(['dashboard']);
+            localStorage.setItem('userId', userId);
             this.loggedState = true;
           }else{
             this.loggedState = false;
@@ -27,6 +28,10 @@ export class AuthenticationService implements CanActivate{
         }
     });
 
+  }
+  logOut(): void{
+    localStorage.removeItem('userId');
+    this.router.navigate(['auth/login']);
   }
   constructor(public router: Router) {
     firebase.initializeApp({apiKey: 'AIzaSyBQEcLynOTrxHyXR4Z4Q_wpR2g9EPGLqIA',
@@ -41,8 +46,7 @@ export class AuthenticationService implements CanActivate{
   getUserList(): any{
     return this.database.ref('usersList');
   }
-
-  canActivate(): boolean{
-    return !this.loggedState;
+  getUserId(): string | null{
+    return localStorage.getItem('userId');
   }
 }
