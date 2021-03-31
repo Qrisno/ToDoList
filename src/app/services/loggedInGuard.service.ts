@@ -9,7 +9,6 @@ export class LogGuardService implements CanActivate{
   constructor(private authenticationService: AuthenticationService){
 
   }
-
   canActivate(): boolean {
     return !!this.authenticationService.getUserId();
   }

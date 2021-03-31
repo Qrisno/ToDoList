@@ -12,6 +12,7 @@
         color: $textColor;
     }
     .iconText {
+        @include noSelect;
         color: $textColor;
         @include basic-text(16px, bold);
     }

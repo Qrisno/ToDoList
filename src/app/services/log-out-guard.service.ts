@@ -6,8 +6,10 @@ import { CanActivate } from '@angular/router';
 })
 export class LogOutGuardService implements CanActivate{
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService) {
+  }
   canActivate(): boolean{
+    console.log(!this.authenticationService.getUserId());
     return !this.authenticationService.getUserId();
   }
 }

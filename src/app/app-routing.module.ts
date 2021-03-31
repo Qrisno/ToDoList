@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPageComponent } from './features/auth-page/auth-page.component';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
-import { LoginComponent } from './features/login/login.component';
-import { RegistrationComponent } from './features/registration/registration.component';
 import {LogGuardService} from './services/loggedInGuard.service';
 import {LogOutGuardService} from './services/log-out-guard.service';
+import {AppComponent} from './app.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-  {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [LogGuardService]},
-  {path: 'auth', component: AuthPageComponent, children: [
-    {path: 'register', component: RegistrationComponent, data: {animation: 'isRight'}},
-    {path: 'login', component: LoginComponent, data: {animation: 'isLeft'}}
-  ], canActivate: [LogOutGuardService]}
+  {path: '', canActivate: [LogGuardService], children: [
+      {path: '', pathMatch: 'full', redirectTo: 'dashboard'},
+      {path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)
+      }]},
+  {path: '', canActivate: [LogOutGuardService], loadChildren:
+      () => import('./features/registration/registration.module').then(m => m.RegistrationModule)}
+
 ];
 
 @NgModule({
@@ -23,3 +20,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

@@ -13,7 +13,7 @@ export class AuthPageComponent implements OnInit {
   login!:boolean;
 
   constructor(private router: RouterOutlet){
-
+  console.log(1)
   }
   ngOnInit(): void {
   }

@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  public loggedState = false;
+  loggedState = true;
   database: any;
   validStatus = true;
   data: any;
@@ -30,8 +30,9 @@ export class AuthenticationService {
 
   }
   logOut(): void{
+    this.router.navigate(['auth']);
     localStorage.removeItem('userId');
-    this.router.navigate(['auth/login']);
+
   }
   constructor(public router: Router) {
     firebase.initializeApp({apiKey: 'AIzaSyBQEcLynOTrxHyXR4Z4Q_wpR2g9EPGLqIA',

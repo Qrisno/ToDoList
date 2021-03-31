@@ -6,8 +6,8 @@
 
 
     <div class="container">
-        <div class="register" *ngIf='login' [routerLink]='[ "/auth/register"]' (click)='switchAuthMode()'><span>Register</span><i class="las la-angle-right"></i></div>
-        <div class="login" *ngIf='!login' [routerLink]="[ '/auth/login']" (click)='switchAuthMode()'><i class="las la-angle-left"></i><span>Login</span></div>
+        <div class="register" *ngIf='!login' [routerLink]='[ "/auth/register"]' (click)='switchAuthMode()'><span>Register</span><i class="las la-angle-right"></i></div>
+        <div class="login" *ngIf='login' [routerLink]="[ '/auth/login']" (click)='switchAuthMode()'><i class="las la-angle-left"></i><span>Login</span></div>
         <h1 unselectable="on">TDR </h1>
         <div class="router" [@routeAnimations]="prepareRoute(outlet)">
             <router-outlet #outlet='outlet'></router-outlet>

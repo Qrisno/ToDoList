@@ -9,11 +9,11 @@ export class LoginComponent implements OnInit {
   username?: any;
   password?: any;
   invalid = this.authenticationService.validStatus;
-  constructor(public authenticationService:AuthenticationService) { }
+  constructor(public authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
   }
- 
+
 
 
 }
